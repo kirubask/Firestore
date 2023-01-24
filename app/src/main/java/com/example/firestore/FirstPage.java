@@ -1,11 +1,13 @@
 package com.example.firestore;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.LauncherActivity;
+import android.graphics.Canvas;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -34,6 +36,14 @@ public class FirstPage extends AppCompatActivity {
         }
         adapter = new MyAdapter(listItems,this);
         recyclerView.setAdapter(adapter);
+
+        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void onDraw(@NonNull Canvas c, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+                super.onDraw(c, parent, state);
+                swipeController.onDraw(c);
+            }
+        });
 
     }
 }
