@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
+        getSupportActionBar().hide();
 
         nameEdiTXT = findViewById(R.id.et_name);
         emailEdiTXT = findViewById(R.id.et_email);
@@ -42,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         registerBtn = findViewById(R.id.btn_register);
         doUAcc = findViewById(R.id.doUSignIn);
         firebaseAuth = FirebaseAuth.getInstance();
-
 
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
